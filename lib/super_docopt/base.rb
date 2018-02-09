@@ -40,14 +40,18 @@ module SuperDocopt
     def handle_subcommand(args)
       subcommands.each do |subcommand|
         input, method = translate_subcommand subcommand
+        found = find_and_execute args, input, method
+        return if found
+      end
+    end
 
-        if args[input]
-          raise NotImplementedError, 
-            "Please implement ##{method}" unless respond_to? method
+    def find_and_execute(args, input, method)
+      if args[input]
+        raise NotImplementedError, 
+          "Please implement ##{method}" unless respond_to? method
 
-          send method, args
-          return
-        end
+        send method, args
+        return
       end
     end
 
