@@ -6,12 +6,26 @@ class SuperDocopt
 
   VERSION = '0.0.1'
 
+  attr_accessor :version, :docopt, :subcommands
+
   def self.execute(argv=[])
     instance.execute_cli argv
   end
+
+  def self.version(version)
+    instance.version = version
+  end
+
+  def self.docopt(path)
+    instance.docopt = path
+  end
+
+  def self.subcommands(list)
+    instance.subcommands = list
+  end
   
   def execute_cli(argv=[])
-    doc = File.read docopt_file
+    doc = File.read docopt
     begin
       args = Docopt::docopt(doc, argv: argv, version: version)
       handle_subcommand args
@@ -32,15 +46,16 @@ class SuperDocopt
         method = subcommand.values.first.to_s
       end
 
-      command.gsub! '_', '-'
-      method.gsub! '-', '_'
+      command = command.gsub '_', '-'
+      method  = method.gsub  '-', '_'
 
       if args[command]
-        raise NotImplementedError, "Please implement ##{method}" unless respond_to? method
+        raise NotImplementedError, 
+          "Please implement ##{method}" unless respond_to? method
+
         send method, args
         return
       end
     end
   end
-
 end

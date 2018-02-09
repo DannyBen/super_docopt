@@ -1,0 +1,6 @@
+Super Docopt Mock
+
+Usage:
+  mock hello
+  mock not-implemented
+  mock (-h|--help|--version)
