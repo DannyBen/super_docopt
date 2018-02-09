@@ -39,18 +39,9 @@ module SuperDocopt
 
     def handle_subcommand(args)
       subcommands.each do |subcommand|
-        command = subcommand.to_s
-        method  = subcommand.to_s
+        input, method = translate_subcommand subcommand
 
-        if subcommand.is_a? Hash
-          command = subcommand.keys.first.to_s
-          method = subcommand.values.first.to_s
-        end
-
-        command = command.gsub '_', '-'
-        method  = method.gsub  '-', '_'
-
-        if args[command]
+        if args[input]
           raise NotImplementedError, 
             "Please implement ##{method}" unless respond_to? method
 
@@ -58,6 +49,21 @@ module SuperDocopt
           return
         end
       end
+    end
+
+    def translate_subcommand(subcommand)
+      input  = subcommand.to_s
+      method = subcommand.to_s
+
+      if subcommand.is_a? Hash
+        input  = subcommand.keys.first.to_s
+        method = subcommand.values.first.to_s
+      end
+
+      input  = input.gsub '_', '-'
+      method = method.gsub  '-', '_'
+
+      [input, method]
     end
   end
 end
