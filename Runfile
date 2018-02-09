@@ -1,0 +1,12 @@
+require "runfile-tasks"
+require 'fileutils'
+require 'super_docopt/version'
+
+title   "Super Docopt Developer Toolbelt"
+summary "Runfile tasks for building the Super Docopt gem"
+version SuperDocopt::VERSION
+
+RunfileTasks::RubyGems.all 'super_docopt'
+RunfileTasks::Testing.rspec
+
+
