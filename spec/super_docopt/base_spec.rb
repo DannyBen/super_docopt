@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe SuperDocopt do
-  subject { SuperDocoptMocks::Basic }
+describe Base do
+  subject { Mocks::Basic }
   let(:instance) { subject.instance }
 
   describe '::execute' do
@@ -12,15 +12,21 @@ describe SuperDocopt do
   end
 
   describe '::version' do
-    it "sets instance#version"
+    it "sets instance#version" do
+      expect(instance.version).to eq "6.6.6"
+    end
   end
 
   describe '::docopt' do
-    it "sets instance#docopt"
+    it "sets instance#docopt" do
+      expect(instance.docopt).to include "spec/mocks/basic"
+    end
   end
 
   describe '::subcommands' do
-    it "sets instance#subcommands"
+    it "sets instance#subcommands" do
+      expect(instance.subcommands).to include "hello"
+    end
   end
 
   describe '#execute_cli' do
@@ -45,6 +51,18 @@ describe SuperDocopt do
     context "with an invalid subcommand" do
       it "raises NotImplementedError" do
         expect{ subject.execute ['not-implemented'] }.to raise_error NotImplementedError
+      end
+    end
+
+    context "with a hash subcommand" do
+      it "uses the key as the command and value as the method" do
+        expect{ subject.execute ['check'] }.to output_fixture :check
+      end
+    end
+
+    context "with a subcommand that includes a dash" do
+      it "converts the dashes to underscores in the method name" do
+        expect{ subject.execute ['just-do-it'] }.to output_fixture :just_do_it
       end
     end
 

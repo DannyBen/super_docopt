@@ -1,4 +1,6 @@
 Usage:
   mock hello
   mock not-implemented
+  mock check
+  mock just-do-it
   mock (-h|--help|--version)
