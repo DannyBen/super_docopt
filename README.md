@@ -16,7 +16,7 @@ Create command line utilities with ease.
 Install
 --------------------------------------------------
 
-  $ gem install runfile
+    $ gem install runfile
 
 
 Example
