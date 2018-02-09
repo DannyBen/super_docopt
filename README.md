@@ -9,8 +9,7 @@ Super Docopt
 ---
 
 Create command line utilities with ease.
-*Super Docopt* is an small extension that provides some syntactic sugar to 
-[Docopt][1]
+*Super Docopt* is an extension that provides syntactic sugar to [Docopt][1]
 
 ---
 
