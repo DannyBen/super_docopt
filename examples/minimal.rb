@@ -11,7 +11,7 @@ class MyCLI < SuperDocopt::Base
   end
 
   def world
-    puts "#world called"
+    puts "world called"
   end
 end
 
