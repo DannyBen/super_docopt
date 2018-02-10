@@ -31,11 +31,11 @@ class MyCommandLine < SuperDocopt::Base
   docopt 'docopt.txt'
   subcommands ['download', 'upload']
 
-  def download(args)
+  def download
     puts "#download called with #{args}"
   end
 
-  def upload(args)
+  def upload
     puts "#upload called"
   end
 end
