@@ -39,6 +39,8 @@ class MyCommandLine < SuperDocopt::Base
     puts "#upload called"
   end
 end
+
+MyCommandLine.execute ARGV
 ```
 
 ```plain
