@@ -19,7 +19,7 @@ Install
     $ gem install runfile
 
 
-Example
+Getting Started
 --------------------------------------------------
 
 ```ruby
@@ -51,10 +51,7 @@ Usage:
   mock (-h|--help|--version)
 ```
 
-Usage
---------------------------------------------------
-
-Soon
+See the [examples](/examples) folder for more examples.
 
 ---
 

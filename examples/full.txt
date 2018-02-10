@@ -1,0 +1,7 @@
+Super Docopt Mock
+
+Usage:
+  mycli download [--force]
+  mycli start-server [--daemon]
+  mycli initialize
+  mycli (-h|--help|--version)

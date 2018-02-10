@@ -1,0 +1,6 @@
+Super Docopt Mock
+
+Usage:
+  mycli hello [NAME]
+  mycli world
+  mycli (-h|--help|--version)
