@@ -2,7 +2,7 @@ require 'super_docopt'
 
 class MyCLI < SuperDocopt::Base
   version '0.1.0'
-  docopt 'minimal.txt'
+  docopt File.expand_path 'minimal.txt', __dir__
   subcommands ['hello', 'world']
 
   def hello

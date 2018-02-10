@@ -2,7 +2,7 @@ require 'super_docopt'
 
 class MyCLI < SuperDocopt::Base
   version '0.1.0'
-  docopt 'full.txt'
+  docopt File.expand_path 'full.txt', __dir__
   subcommands ['download', 'start-server', {'initialize' => 'init'}]
 
   def before_execute

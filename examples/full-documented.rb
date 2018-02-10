@@ -6,7 +6,7 @@ class MyCLI < SuperDocopt::Base
 
   # Specify location of docopt file
   # Read more about the syntax of this file in http://docopt.org
-  docopt 'full.txt'
+  docopt File.expand_path 'full.txt', __dir__
 
   # Specify all available subcommands.
   #
