@@ -5,8 +5,7 @@ module SuperDocopt
   class Base
     include Singleton
 
-    VERSION = '0.0.1'
-
+    attr_reader :args
     attr_accessor :version, :docopt, :subcommands
 
     def self.execute(argv=[])
@@ -24,12 +23,12 @@ module SuperDocopt
     def self.subcommands(list)
       instance.subcommands = list
     end
-    
+
     def execute_cli(argv=[])
       doc = File.read docopt
       begin
-        args = Docopt::docopt(doc, argv: argv, version: version)
-        handle_subcommand args
+        @args = Docopt::docopt(doc, argv: argv, version: version)
+        handle_subcommand
       rescue Docopt::Exit => e
         puts e.message
       end
@@ -37,24 +36,20 @@ module SuperDocopt
 
     private
 
-    def handle_subcommand(args)
+    def handle_subcommand
       subcommands.each do |subcommand|
         input, method = translate_subcommand subcommand
-        found = find_and_execute args, input, method
-        return if found
+        return execute_subcommand input, method if args[input] 
       end
     end
 
-    def find_and_execute(args, input, method)
-      if args[input]
-        raise NotImplementedError, 
-          "Please implement ##{method}" unless respond_to? method
+    def execute_subcommand(input, method)
+      raise NotImplementedError, 
+        "Please implement ##{method}" unless respond_to? method
 
-        before_execute args
-        send method, args
-        after_execute args
-        return
-      end
+      before_execute
+      send method
+      after_execute
     end
 
     def translate_subcommand(subcommand)
@@ -72,9 +67,9 @@ module SuperDocopt
       [input, method]
     end
 
-    # Overridables
+    # Overridable Hooks
 
-    def before_execute(args); end
-    def after_execute(args); end
+    def before_execute; end
+    def after_execute; end
   end
 end
