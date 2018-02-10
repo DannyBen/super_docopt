@@ -9,12 +9,21 @@ module SuperDocopt::Mocks
       {'check' => :verify}
     ]
 
+    def before_execute(args)
+      @good_place = "to initialize variable"
+      puts "#before_execute called"
+    end
+
+    def after_execute(args)
+      puts "#after_execute called"
+    end
+
     def hello(args)
       puts "#hello called with #{args}"
     end
 
     def verify(args)
-      puts "#verify called"
+      puts "#verify called #{@good_place}"
     end
 
     def just_do_it(args)

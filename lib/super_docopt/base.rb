@@ -50,7 +50,9 @@ module SuperDocopt
         raise NotImplementedError, 
           "Please implement ##{method}" unless respond_to? method
 
+        before_execute args
         send method, args
+        after_execute args
         return
       end
     end
@@ -69,5 +71,10 @@ module SuperDocopt
 
       [input, method]
     end
+
+    # Overridables
+
+    def before_execute(args); end
+    def after_execute(args); end
   end
 end
