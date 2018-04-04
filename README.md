@@ -4,7 +4,7 @@ Super Docopt
 [![Gem](https://img.shields.io/gem/v/super_docopt.svg?style=flat-square)](https://rubygems.org/gems/super_docopt)
 [![Build](https://img.shields.io/travis/DannyBen/super_docopt.svg?style=flat-square)](https://travis-ci.org/DannyBen/super_docopt)
 [![Maintainability](https://img.shields.io/codeclimate/maintainability/DannyBen/super_docopt.svg?style=flat-square)](https://codeclimate.com/github/DannyBen/super_docopt)
-[![Issues](https://img.shields.io/codeclimate/issues/github/DannyBen/super_docopt.svg?style=flat-square)](https://codeclimate.com/github/DannyBen/super_docopt)
+[![Issues](https://img.shields.io/codeclimate/issues/DannyBen/super_docopt.svg?style=flat-square)](https://codeclimate.com/github/DannyBen/super_docopt)
 
 ---
 
