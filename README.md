@@ -1,9 +1,10 @@
 Super Docopt
 ==================================================
 
-[![Gem](https://img.shields.io/gem/v/super_docopt.svg?style=flat-square)](https://rubygems.org/gems/super_docopt)
-[![Build](https://img.shields.io/travis/DannyBen/super_docopt.svg?style=flat-square)](https://travis-ci.org/DannyBen/super_docopt)
-[![Maintainability](https://img.shields.io/codeclimate/maintainability/DannyBen/super_docopt.svg?style=flat-square)](https://codeclimate.com/github/DannyBen/super_docopt)
+[![Gem Version](https://badge.fury.io/rb/super_docopt.svg)](https://badge.fury.io/rb/super_docopt)
+[![Build Status](https://travis-ci.com/DannyBen/super_docopt.svg?branch=master)](https://travis-ci.com/DannyBen/super_docopt)
+[![Maintainability](https://api.codeclimate.com/v1/badges/2ca07d88e6f7b0b57e82/maintainability)](https://codeclimate.com/github/DannyBen/super_docopt/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/2ca07d88e6f7b0b57e82/test_coverage)](https://codeclimate.com/github/DannyBen/super_docopt/test_coverage)
 
 ---
 
@@ -15,7 +16,7 @@ Create command line utilities with ease.
 Install
 --------------------------------------------------
 
-    $ gem install runfile
+    $ gem install docopt
 
 
 Getting Started
