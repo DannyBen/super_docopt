@@ -16,7 +16,7 @@ Create command line utilities with ease.
 Install
 --------------------------------------------------
 
-    $ gem install docopt
+    $ gem install super_docopt
 
 
 Getting Started
