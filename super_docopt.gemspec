@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.files       = Dir['README.md', 'lib/**/*.*']
   s.homepage    = 'https://github.com/DannyBen/super_docopt'
   s.license     = 'MIT'
-  s.required_ruby_version = ">= 2.0.0"
+  s.required_ruby_version = ">= 2.2.2"
 
   s.add_runtime_dependency 'docopt', '~> 0.6'
 
