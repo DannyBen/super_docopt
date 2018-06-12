@@ -24,5 +24,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rspec_fixtures', '~> 0.3'
   s.add_development_dependency 'simplecov', '~> 0.15'
   s.add_development_dependency 'byebug', '~> 9.0'
-  s.add_development_dependency 'require_all', '~> 1.5'
+  s.add_development_dependency 'requires', '~> 0.1'
 end

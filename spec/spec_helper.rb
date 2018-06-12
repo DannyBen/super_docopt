@@ -7,7 +7,5 @@ Bundler.require :default, :development
 
 include SuperDocopt
 
-# Load mocks
-require 'require_all'
-require_all 'spec/mocks/*.rb'
+requires 'mocks'
 
