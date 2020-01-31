@@ -2,7 +2,7 @@ Super Docopt
 ==================================================
 
 [![Gem Version](https://badge.fury.io/rb/super_docopt.svg)](https://badge.fury.io/rb/super_docopt)
-[![Build Status](https://travis-ci.com/DannyBen/super_docopt.svg?branch=master)](https://travis-ci.com/DannyBen/super_docopt)
+[![Build Status](https://github.com/DannyBen/super_docopt/workflows/Test/badge.svg)](https://github.com/DannyBen/super_docopt/actions?query=workflow%3ATest)
 [![Maintainability](https://api.codeclimate.com/v1/badges/2ca07d88e6f7b0b57e82/maintainability)](https://codeclimate.com/github/DannyBen/super_docopt/maintainability)
 
 ---
