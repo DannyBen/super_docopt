@@ -32,19 +32,19 @@ describe Base do
   describe '#execute_cli' do
     context "without arguments" do
       it "shows usage" do
-        expect{ subject.execute }.to output_fixture :usage
+        expect{ subject.execute }.to output_approval :usage
       end
     end
 
     context "with --help" do
       it "shows full usage" do
-        expect{ subject.execute ['--help'] }.to output_fixture :full_usage
+        expect{ subject.execute ['--help'] }.to output_approval :full_usage
       end
     end
 
     context "with a valid subcommand" do
       it "calls the subcommand method" do
-        expect{ subject.execute ['hello'] }.to output_fixture :hello
+        expect{ subject.execute ['hello'] }.to output_approval :hello
       end
     end
 
@@ -56,13 +56,13 @@ describe Base do
 
     context "with a hash subcommand" do
       it "uses the key as the command and value as the method" do
-        expect{ subject.execute ['check'] }.to output_fixture :check
+        expect{ subject.execute ['check'] }.to output_approval :check
       end
     end
 
     context "with a subcommand that includes a dash" do
       it "converts the dashes to underscores in the method name" do
-        expect{ subject.execute ['just-do-it'] }.to output_fixture :just_do_it
+        expect{ subject.execute ['just-do-it'] }.to output_approval :just_do_it
       end
     end
 
