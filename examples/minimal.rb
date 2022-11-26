@@ -3,7 +3,7 @@ require 'super_docopt'
 class MyCLI < SuperDocopt::Base
   version '0.1.0'
   docopt File.expand_path 'minimal.txt', __dir__
-  subcommands ['hello', 'world']
+  subcommands %w[hello world]
 
   def hello
     name = args['NAME'] || 'world'
@@ -11,7 +11,7 @@ class MyCLI < SuperDocopt::Base
   end
 
   def world
-    puts "world called"
+    puts 'world called'
   end
 end
 

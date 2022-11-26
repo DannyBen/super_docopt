@@ -1,0 +1,18 @@
+require:
+  - rubocop-performance
+  - rubocop-rspec
+
+inherit_gem:
+  rentacop:
+    - rentacop.yml
+    - rspec.yml
+
+AllCops:
+  TargetRubyVersion: 2.6
+  Exclude:
+    - 'dev/**/*'
+
+# Allow irregular filename here
+Naming/FileName:
+  Exclude:
+    - 'examples/full-documented.rb'

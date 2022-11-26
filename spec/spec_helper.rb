@@ -8,4 +8,3 @@ Bundler.require :default, :development
 include SuperDocopt
 
 requires 'mocks'
-

@@ -3,18 +3,18 @@ require 'super_docopt'
 class MyCLI < SuperDocopt::Base
   version '0.1.0'
   docopt File.expand_path 'full.txt', __dir__
-  subcommands ['download', 'start-server', {'initialize' => 'init'}]
+  subcommands ['download', 'start-server', { 'initialize' => 'init' }]
 
   def before_execute
-    puts "before_execute called"
+    puts 'before_execute called'
   end
 
   def after_execute
-    puts "after_execute called"
+    puts 'after_execute called'
   end
 
   def download
-    puts "download called"
+    puts 'download called'
     p args
   end
 
@@ -24,7 +24,7 @@ class MyCLI < SuperDocopt::Base
   end
 
   def init
-    puts "init called"
+    puts 'init called'
   end
 end
 

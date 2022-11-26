@@ -8,7 +8,7 @@ module SuperDocopt
     attr_reader :args
     attr_accessor :version, :docopt, :subcommands
 
-    def self.execute(argv=[])
+    def self.execute(argv = [])
       instance.execute_cli argv
     end
 
@@ -24,28 +24,27 @@ module SuperDocopt
       instance.subcommands = list
     end
 
-    def execute_cli(argv=[])
+    def execute_cli(argv = [])
       doc = File.read docopt
       begin
-        @args = Docopt::docopt(doc, argv: argv, version: version)
+        @args = Docopt.docopt(doc, argv: argv, version: version)
         handle_subcommand
       rescue Docopt::Exit => e
         puts e.message
       end
     end
 
-    private
+  private
 
     def handle_subcommand
       subcommands.each do |subcommand|
         input, method = translate_subcommand subcommand
-        return execute_subcommand input, method if args[input] 
+        return execute_subcommand method if args[input]
       end
     end
 
-    def execute_subcommand(input, method)
-      raise NotImplementedError, 
-        "Please implement ##{method}" unless respond_to? method
+    def execute_subcommand(method)
+      raise NotImplementedError, "Please implement ##{method}" unless respond_to? method
 
       before_execute
       send method
@@ -61,8 +60,8 @@ module SuperDocopt
         method = subcommand.values.first.to_s
       end
 
-      input  = input.gsub '_', '-'
-      method = method.gsub  '-', '_'
+      input  = input.tr '_', '-'
+      method = method.tr  '-', '_'
 
       [input, method]
     end

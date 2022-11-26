@@ -15,19 +15,19 @@ class MyCLI < SuperDocopt::Base
   #     CLI application and the method name
   #   - a hash with one key => value, where the key is the subcommand in
   #     your CLI application, and the value is the method name.
-  #     This feature was designed to allow having commands that may be 
+  #     This feature was designed to allow having commands that may be
   #     reserved names in Ruby (e.g. `initialize`).
   #
-  # Commands with '-' will use '_' when looking for a method name 
+  # Commands with '-' will use '_' when looking for a method name
   # (e.g. the command 'start-server' will need a 'start_server' method).
-  subcommands ['download', 'start-server', {'initialize' => 'init'}]
+  subcommands ['download', 'start-server', { 'initialize' => 'init' }]
 
   # Optional:
   # Implement `before_execute` with any logic.
   # You have access to all the supplied arguments through the `args`
   # instance variable.
   def before_execute
-    puts "before_execute called"
+    puts 'before_execute called'
   end
 
   # Optional:
@@ -35,7 +35,7 @@ class MyCLI < SuperDocopt::Base
   # You have access to all the supplied arguments through the `args`
   # instance variable.
   def after_execute
-    puts "after_execute called"
+    puts 'after_execute called'
   end
 
   # Subcommand Implementation
@@ -44,7 +44,7 @@ class MyCLI < SuperDocopt::Base
   # that were supplied by the command line.
 
   def download
-    puts "download called"
+    puts 'download called'
     p args
   end
 
@@ -54,7 +54,7 @@ class MyCLI < SuperDocopt::Base
   end
 
   def init
-    puts "init called"
+    puts 'init called'
   end
 end
 

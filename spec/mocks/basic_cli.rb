@@ -3,19 +3,19 @@ module SuperDocopt::Mocks
     version '6.6.6'
     docopt File.expand_path 'basic.txt', __dir__
     subcommands [
-      'hello', 
+      'hello',
       'not-implemented',
       'just-do-it',
-      {'check' => :verify}
+      { 'check' => :verify },
     ]
 
     def before_execute
-      @good_place = "to initialize variable"
-      puts "#before_execute called"
+      @good_place = 'to initialize variable'
+      puts '#before_execute called'
     end
 
     def after_execute
-      puts "#after_execute called"
+      puts '#after_execute called'
     end
 
     def hello
@@ -27,7 +27,7 @@ module SuperDocopt::Mocks
     end
 
     def just_do_it
-      puts "#just_do_it called"      
+      puts '#just_do_it called'
     end
   end
 end

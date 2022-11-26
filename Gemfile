@@ -1,4 +1,4 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
 gem 'byebug'
 gem 'requires'
@@ -9,4 +9,3 @@ gem 'runfile-tasks'
 gem 'simplecov'
 
 gemspec
-
