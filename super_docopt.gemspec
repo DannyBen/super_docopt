@@ -14,6 +14,7 @@ Gem::Specification.new do |s|
   s.license     = 'MIT'
   s.required_ruby_version = '>= 2.6.0'
 
-  s.add_runtime_dependency 'docopt', '~> 0.6'
+  s.add_runtime_dependency 'docopt_ng', '~> 0.7'
+
   s.metadata['rubygems_mfa_required'] = 'true'
 end

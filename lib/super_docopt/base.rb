@@ -1,5 +1,5 @@
 require 'singleton'
-require 'docopt'
+require 'docopt_ng'
 
 module SuperDocopt
   class Base
@@ -27,9 +27,9 @@ module SuperDocopt
     def execute_cli(argv = [])
       doc = File.read docopt
       begin
-        @args = Docopt.docopt(doc, argv: argv, version: version)
+        @args = DocoptNG.docopt(doc, argv: argv, version: version)
         handle_subcommand
-      rescue Docopt::Exit => e
+      rescue DocoptNG::Exit => e
         puts e.message
       end
     end
