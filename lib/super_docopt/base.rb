@@ -61,7 +61,7 @@ module SuperDocopt
       end
 
       input  = input.tr '_', '-'
-      method = method.tr  '-', '_'
+      method = method.tr '-', '_'
 
       [input, method]
     end
