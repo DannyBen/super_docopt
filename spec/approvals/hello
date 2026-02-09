@@ -1,3 +1,11 @@
 #before_execute called
-#hello called with {"hello"=>true, "not-implemented"=>false, "check"=>false, "just-do-it"=>false, "-h"=>false, "--help"=>false, "--version"=>false}
+#hello called
+---
+hello: true
+not-implemented: false
+check: false
+just-do-it: false
+"-h": false
+"--help": false
+"--version": false
 #after_execute called

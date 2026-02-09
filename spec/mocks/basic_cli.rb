@@ -1,3 +1,5 @@
+require 'yaml'
+
 module SuperDocopt::Mocks
   class Basic < SuperDocopt::Base
     version '6.6.6'
@@ -19,7 +21,8 @@ module SuperDocopt::Mocks
     end
 
     def hello
-      puts "#hello called with #{args}"
+      puts "#hello called"
+      puts args.to_yaml
     end
 
     def verify
