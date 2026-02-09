@@ -1,6 +1,8 @@
 Super Docopt
 ==================================================
 
+![repocard](https://repocard.dannyben.com/svg/super_docopt.svg)
+
 Create command line utilities with ease.
 *Super Docopt* is an extension that provides syntactic sugar to [Docopt][1]
 
